@@ -2,256 +2,440 @@
   <img src="assets/bloxsmith-banner.png" alt="BloxSmith — Claude Skill for Roblox Game Development" />
 </p>
 
-# BloxSmith — Claude Skill for Roblox Game Development
+<h1 align="center">BloxSmith</h1>
 
-BloxSmith is a production-ready Claude Skill for serious Roblox game development. It helps Claude Code plan, implement, debug, refactor, optimize, and review Roblox games using Luau, Roblox Studio, Rojo, secure multiplayer architecture, DataStores, UI/HUD systems, procedural 3D workflows, Creator Store asset pipelines, QA, analytics, LiveOps, and release management.
+<p align="center">
+  <strong>A production-ready Claude Skill for serious Roblox game development.</strong>
+</p>
 
-This repository is designed for:
+<p align="center">
+  <a href="https://github.com/gogolumo/bloxsmith-roblox-claude-skill/releases">
+    <img src="https://img.shields.io/github/v/release/gogolumo/bloxsmith-roblox-claude-skill?style=for-the-badge&color=7c3aed" alt="Release" />
+  </a>
+  <img src="https://img.shields.io/badge/Claude-Skill-7c3aed?style=for-the-badge" alt="Claude Skill" />
+  <img src="https://img.shields.io/badge/Roblox-Studio-red?style=for-the-badge" alt="Roblox Studio" />
+  <img src="https://img.shields.io/badge/Luau-Typed-blue?style=for-the-badge" alt="Luau" />
+  <img src="https://img.shields.io/badge/Rojo-Ready-orange?style=for-the-badge" alt="Rojo" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License" />
+</p>
 
-1. **Claude Code personal skill** — install once and use across many Roblox projects.
-2. **Project-level skill** — commit it inside a Roblox game repository so Claude follows the same engineering rules for the whole project.
+---
 
-## What the skill does
+## What is BloxSmith?
 
-It helps Claude with:
+**BloxSmith** is a complete Claude Skill that turns Claude Code into a Roblox game development assistant.
 
-- Roblox Studio and Rojo project structure;
-- server/client/shared architecture;
-- typed Luau modules;
-- RemoteEvent and RemoteFunction contracts;
-- multiplayer exploit review;
-- DataStore profile systems;
-- UI/HUD systems;
-- gameplay systems such as inventory, quests, dialogue, combat, ships, NPCs, economy, interactions, and open-world regions;
-- Output error diagnosis;
-- performance review;
-- procedural 3D model generation using Claude Code + Rojo + Roblox Studio;
-- Creator Store asset research, manifests, safe import helpers, and asset-kit workflows.
-- Internet/open-source research workflows for learning from public docs, tutorials, and GitHub repositories.
-- Reference-game mechanic analysis that converts visible gameplay into original Roblox systems without copying protected code/assets.
+It helps Claude plan, implement, debug, refactor, optimize, and review Roblox games using **Luau**, **Roblox Studio**, **Rojo**, secure multiplayer architecture, DataStores, UI/HUD systems, procedural 3D workflows, Creator Store asset pipelines, QA, analytics, LiveOps, and release management.
 
-## What makes it opinionated
+BloxSmith is not just a coding prompt.  
+It is a practical production workflow for building Roblox games seriously.
 
-The skill pushes back against bad Roblox habits:
+---
 
-- giant scripts;
-- trusting the client;
-- insecure remotes;
-- untyped messy modules with unclear boundaries;
-- DataStore code without failure handling;
-- no folder structure;
-- code without Studio placement instructions;
-- code without test steps;
-- fake Roblox APIs.
+## Why this exists
 
+Roblox projects often become messy because scripts grow too large, remotes become unsafe, DataStores are handled badly, UI breaks on mobile, and performance problems appear too late.
 
+BloxSmith forces Claude to work like a real Roblox developer:
 
+| Area | What BloxSmith helps with |
+|---|---|
+| Architecture | Server/client/shared separation, services, controllers, modules |
+| Security | Remote validation, rate limits, server authority, anti-exploit reviews |
+| Gameplay | Combat, quests, inventory, ships, NPCs, survival systems |
+| UI/HUD | Safe areas, responsive scaling, HUD states, mobile support |
+| Data | DataStores, migrations, save safety, session handling |
+| Assets | Creator Store workflows, asset manifests, procedural models |
+| Performance | Low-end optimization, MicroProfiler review, frame budgets |
+| Production | QA, analytics, LiveOps, releases, rollback plans |
 
-## Internet, open-source, and reference mechanic workflow
+---
 
-The skill can help Claude learn from external sources without turning the project into a copyright/security mess.
+## Skill path
 
-Supported sources:
-
-```text
-Official Roblox docs
-Official Roblox creator-docs GitHub repository
-Open-source Roblox/Luau repositories with clear licenses
-Tutorials and DevForum examples, after license/quality review
-Creator Store assets, through the manifest/import/review workflow
-User-owned place files and project exports
-Visible gameplay observations from public games
-```
-
-Important boundary: public Roblox experiences usually do **not** expose their real source code. The skill must not pretend it can inspect hidden scripts from another game. It can study visible mechanics, videos, screenshots, timing, UI flow, and public/open-source code, then build an original clean-room implementation for your game.
-
-The workflow creates:
+The Claude Skill lives here:
 
 ```text
-/docs/research/source-log.md
-/docs/research/mechanic-studies/
-THIRD_PARTY_NOTICES.md, when code/assets are actually reused
+skills/developing-roblox-games/SKILL.md
 ```
 
-The skill should push back against requests to copy closed-source code, leaked place files, exploit dumps, private repositories, or paid assets without permission. It should instead produce an original typed Luau implementation with proper server authority, Remote contracts, test steps, and attribution notes where needed.
-
-## Creator Store asset workflow
-
-The skill can help Claude use existing Roblox Creator Store assets without turning your game into a pile of random free models.
-
-Supported modes:
-
-```text
-Manual Studio mode: user searches Toolbox > Creator Store and provides asset IDs/screenshots
-Open Cloud/search mode: Claude Code uses approved local credentials, if configured
-Manifest-first mode: Claude creates the asset manifest and search terms before real IDs exist
-```
-
-The skill tells Claude to record candidates in a manifest, verify permissions and style fit, load approved IDs into a review folder, inspect scripts/remotes/collision/performance, and generate procedural placeholders when assets are unavailable.
-
-Important limitation: Claude should not claim it can directly browse your private Roblox Studio Toolbox unless the current environment actually provides Studio/browser/API access. It can still prepare search terms, manifests, import commands, and cleanup workflows.
-
-## Procedural 3D model generation
-
-The skill includes a practical workflow for generating Roblox models from code:
-
-```text
-Claude Code writes Luau blueprint/builder files
-Rojo syncs them into Roblox Studio
-Studio Command Bar or a dev plugin runs the generator
-Generated Model appears under Workspace/GeneratedModels
-```
-
-This works well for part-based low-poly assets, ships, houses, docks, rocks, props, blockout islands, collision boxes, sockets, and placeholders.
-
-Important limitation: this does **not** magically upload FBX/OBJ meshes. True mesh imports still go through Roblox Studio Importer or Asset Manager, and scripts need real Roblox asset IDs before referencing MeshParts.
-
-
-
-## v6 production QA workflow
-
-The skill now includes a stronger production layer:
-
-```text
-Automated tests → Localization → Experiments → Release checklist → Rollback plan → Accessibility → Animation/audio pipeline → Docs update
-```
-
-This means Claude should not only write Luau. It should also help keep the project testable, localizable, releasable, and maintainable.
-
-New supported workflows:
-
-- write TestEZ/Jest Roblox tests for pure modules;
-- add regression tests for fixed bugs;
-- extract UI/dialogue text into localization keys and CSV tables;
-- design A/B experiments with metrics and guardrails;
-- prepare release checklists, patch notes, known issues, and rollback plans;
-- convert repeated assets into reusable Roblox Packages;
-- plan safe Open Cloud automation without exposing secrets;
-- review UI accessibility and cross-platform input;
-- build animation and audio registries;
-- evaluate optional ECS architecture for large entity systems;
-- run multi-agent style production reviews;
-- update project docs after significant changes.
-
-## Install as a Claude Code personal skill
-
-Copy the skill folder into your personal Claude skills directory:
-
-```bash
-mkdir -p ~/.claude/skills
-cp -R skills/developing-roblox-games ~/.claude/skills/developing-roblox-games
-```
-
-Then restart Claude Code or reload the session.
-
-You can invoke it directly with:
-
-```text
-/developing-roblox-games
-```
-
-## Install as a project-level skill
-
-Inside a Roblox project repository:
-
-```bash
-mkdir -p .claude/skills
-cp -R skills/developing-roblox-games .claude/skills/developing-roblox-games
-```
-
-Commit it with the project so Claude uses the same Roblox workflow whenever working in that repository.
-
-## Upload/use as a custom skill
-
-If your Claude interface supports custom skill upload, upload the `skills/developing-roblox-games` folder or a ZIP containing that folder. Keep `SKILL.md` at the root of the skill folder.
-
-## Example prompts
-
-- Review my Roblox RemoteEvent code for exploits.
-- Create a typed Luau inventory system.
-- Fix this Roblox Output error.
-- Plan a ship movement system.
-- Create a HUD with safe area support.
-- Refactor this giant server script.
-- Create a DataStore service with migrations.
-- Set up a Rojo project structure.
-- Debug why my NPC dialogue camera flies away.
-- Review my combat system for server authority.
-- Generate a low-poly ship model in Roblox Studio using Claude Code and Rojo.
-- Create a procedural island blockout with docks, rocks, and spawn points.
-- Build a dev-only Studio plugin button that spawns a generated model.
-- Find Creator Store assets for a stylized coastal village kit.
-- Create a Creator Store asset manifest and safe import command.
-- Review an inserted free model for scripts, remotes, collisions, and performance.
-- Study this public game mechanic and build an original version for my Roblox project.
-- Review this open-source Roblox anti-cheat repo and tell me if we can safely adapt it.
-- Analyze this sprint/combat/ship mechanic from a video and create a clean-room implementation.
-
-## Repository structure
+Supporting files are organized into:
 
 ```text
 skills/developing-roblox-games/
-├── SKILL.md
 ├── reference/
 ├── systems/
 ├── playbooks/
-├── tooling/
 ├── templates/
+├── tooling/
 ├── prompts/
 └── examples/
 ```
 
-## Limitations
+---
 
-- The skill cannot verify private Roblox project files unless Claude has access to them.
-- The skill should not invent Roblox APIs.
-- Claude can generate procedural part-based models, but real imported meshes still require Roblox Studio import workflows and real asset IDs.
-- Creator Store workflows require manual user-provided IDs/screenshots or explicit API/browser access; the skill must not invent asset IDs.
-- Public Roblox games usually expose behavior, not source code; the skill must not claim hidden code access.
-- External code/assets require license and permission checks before reuse.
-- DataStore examples are templates, not a substitute for full production load testing.
-- Security reviews reduce exploit risk but cannot guarantee a game is exploit-proof.
+## Core features
 
-## Contributing
+### Roblox engineering
 
-See `CONTRIBUTING.md`.
+BloxSmith helps Claude design Roblox projects with clear structure:
+
+```text
+ServerScriptService
+├── Services
+
+ReplicatedStorage
+├── Shared
+├── Remotes
+
+StarterPlayer
+├── StarterPlayerScripts
+│   └── Controllers
+
+StarterGui
+└── UI
+```
+
+It pushes for:
+
+- typed Luau
+- small modules
+- reusable ModuleScripts
+- clear remotes
+- server authority
+- manual Roblox Studio test steps
+- clean Rojo file paths
+- practical bug-fixing workflows
+
+---
+
+### Multiplayer security
+
+BloxSmith follows one important rule:
+
+> Never trust the client.
+
+The skill helps Claude review and build:
+
+- secure RemoteEvents
+- RemoteFunction contracts
+- rate limits
+- server-side damage validation
+- currency protection
+- inventory protection
+- quest progress validation
+- anti-exploit checks
+- safe admin/debug commands
+
+---
+
+### Game systems
+
+BloxSmith includes blueprints and workflows for many Roblox systems:
+
+- inventory systems
+- quest systems
+- dialogue systems
+- combat systems
+- ships and vehicles
+- NPCs and AI directors
+- HUD and UI systems
+- saving and profile data
+- economy and shops
+- matchmaking
+- achievements and badges
+- party and crew systems
+- bug reporting
+- analytics and telemetry
+- LiveOps and release planning
+
+---
+
+### Dialogue and narrative design
+
+BloxSmith can help create deeper NPC dialogue by analyzing:
+
+- character voice
+- subtext
+- emotional conflict
+- pacing
+- player choice
+- quest purpose
+- scene function
+- inspiration from literature, films, and games
+
+It does **not** copy scenes or dialogue from copyrighted works.  
+It studies structure and creates original writing for your Roblox game.
+
+---
+
+### Procedural 3D model generation
+
+BloxSmith supports procedural Roblox model workflows using:
+
+- Claude Code
+- Rojo
+- Luau model builders
+- Roblox Studio Command Bar
+- part-based low-poly models
+- Creator Store asset manifests
+
+It can help generate:
+
+- ships
+- props
+- buildings
+- islands
+- NPC placeholders
+- low-poly environment kits
+
+It also considers:
+
+- triangle budgets
+- part counts
+- collision complexity
+- mobile performance
+- low-end fallback models
+- visual style consistency
+
+---
+
+### Creator Store asset workflow
+
+BloxSmith can help Claude use existing Roblox Creator Store assets safely through:
+
+- asset briefs
+- search terms
+- asset manifests
+- review folders
+- import commands
+- asset sanitizers
+- license/permission checks
+- procedural fallbacks when an asset is not suitable
+
+The goal is not to blindly insert random free models.  
+The goal is to build a controlled asset pipeline.
+
+---
+
+### Internet research and mechanic inspiration
+
+BloxSmith can help study:
+
+- public tutorials
+- official Roblox documentation
+- open-source Roblox/Luau repositories
+- gameplay videos
+- reference games
+- mechanic breakdowns
+
+It uses a clean-room adaptation approach:
+
+1. Study the behavior.
+2. Extract the design pattern.
+3. Avoid copying protected code or assets.
+4. Build an original implementation for your project.
+5. Document the source of inspiration.
+
+---
+
+### Optimization for low-end devices
+
+BloxSmith includes low-end optimization workflows for:
+
+- rendering
+- scripts
+- physics
+- networking
+- UI
+- particles
+- memory
+- terrain
+- assets
+- mobile devices
+
+It helps Claude avoid guessing and instead diagnose the real bottleneck.
+
+---
+
+### Build Doctor
+
+BloxSmith includes a project health workflow called **Build Doctor**.
+
+It can review a Roblox project and produce a scorecard like:
+
+```text
+Architecture: 7/10
+Security: 6/10
+Data safety: 8/10
+Performance: 5/10
+Mobile / low-end: 4/10
+UI/UX: 7/10
+Content consistency: 8/10
+Tests: 3/10
+Analytics: 5/10
+Release readiness: 4/10
+```
+
+Then it gives the most important fixes before release.
+
+---
+
+## Example prompts
+
+Use prompts like these with Claude Code:
+
+```text
+Use the developing-roblox-games skill. Review my Roblox project architecture and tell me what is wrong.
+```
+
+```text
+Use the developing-roblox-games skill. Create a secure typed Luau inventory system with DataStore saving.
+```
+
+```text
+Use the developing-roblox-games skill. Build a ship movement system with server authority and client HUD feedback.
+```
+
+```text
+Use the developing-roblox-games skill. Generate a low-poly island outpost using procedural Roblox parts and Rojo.
+```
+
+```text
+Use the developing-roblox-games skill. Review my RemoteEvent code for exploits.
+```
+
+```text
+Use the developing-roblox-games skill. Optimize this game for low-end phones.
+```
+
+```text
+Use the developing-roblox-games skill. Write deep NPC dialogue for a lighthouse keeper based on my quest outline.
+```
+
+```text
+Use the developing-roblox-games skill. Run Build Doctor on my Roblox project.
+```
+
+---
+
+## Installation
+
+### Claude Code personal skill
+
+Install once and use across many Roblox projects:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R skills/developing-roblox-games ~/.claude/skills/
+```
+
+Then restart Claude Code.
+
+---
+
+### Project-level skill
+
+Copy the skill into your Roblox project:
+
+```text
+your-roblox-project/
+└── .claude/
+    └── skills/
+        └── developing-roblox-games/
+```
+
+This makes the skill available only inside that project.
+
+---
+
+## Recommended Roblox toolchain
+
+BloxSmith works best with:
+
+| Tool | Purpose |
+|---|---|
+| Roblox Studio | Main editor |
+| Claude Code | AI coding assistant |
+| Rojo | File sync between code editor and Studio |
+| Luau | Roblox scripting language |
+| Wally | Package management |
+| Selene | Luau linting |
+| StyLua | Code formatting |
+| GitHub | Version control |
+
+---
+
+## What BloxSmith will push back against
+
+BloxSmith is opinionated. It should reject bad Roblox development habits:
+
+- giant scripts
+- unsafe remotes
+- client-owned money, damage, rewards, or saves
+- DataStore code without failure handling
+- UI with no mobile testing
+- no test steps
+- no folder structure
+- messy untyped code
+- copying code from other games
+- adding huge features before making a playable vertical slice
+- overengineering a small MVP
+- ignoring low-end devices
+
+---
+
+## Repository structure
+
+```text
+bloxsmith-roblox-claude-skill/
+├── README.md
+├── LICENSE
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── FINAL_TEST_PROMPTS.md
+└── skills/
+    └── developing-roblox-games/
+        ├── SKILL.md
+        ├── reference/
+        ├── systems/
+        ├── playbooks/
+        ├── templates/
+        ├── tooling/
+        ├── prompts/
+        └── examples/
+```
+
+---
+
+## Release focus
+
+BloxSmith is designed around a full Roblox production pipeline:
+
+```text
+Design
+→ MVP / vertical slice
+→ Architecture
+→ Implementation
+→ Security review
+→ Testing
+→ Localization
+→ Accessibility
+→ Analytics
+→ Performance budget
+→ Release checklist
+→ Rollback plan
+→ LiveOps iteration
+```
+
+---
 
 ## License
 
-MIT License.
+This project is licensed under the MIT License.
 
+---
 
-## v5 production pipeline additions
+## Status
 
-The v5 update expands the skill from a Roblox coding assistant into a fuller production assistant. It adds guidance and templates for:
-
-- analytics and telemetry;
-- funnel and economy event planning;
-- LiveOps/update planning;
-- fair monetization review;
-- MemoryStore and cross-server systems;
-- matchmaking, temporary leaderboards, and global events;
-- performance budgets and MicroProfiler review;
-- UI/UX device testing for PC, mobile, tablet, and gamepad;
-- reusable feature packages;
-- professional dev stack upgrades;
-- game design documents and MVP scope cutting;
-- community safety, reports, and filtered user-generated text.
-
-The skill is intentionally opinionated: it should push back against oversized MVPs, pay-to-win design, unsafe user text systems, client-owned purchases, features without analytics, and performance-heavy systems without a budget.
-
-## v7 Final Game Studio Toolkit
-
-v7 adds the final production layer for Roblox game development:
-
-- Vertical Slice Generator for playable MVPs.
-- Game Loop Designer and first 5 minutes review.
-- Deep original dialogue writing based on structure, subtext, voice cards, and lawful inspiration analysis.
-- 3D model art budgets for procedural models, Creator Store assets, and imported meshes.
-- Low-end optimization workflow for weak PCs and mobile devices.
-- NPC AI director, schedules, enemy spawners, procedural islands, biomes, and prop placement.
-- Achievements, badges, party/crew systems, safe debug/admin commands.
-- In-game bug reporter, error telemetry, asset dependency graph, content/art bibles.
-- Build Doctor project health scoring.
-
-The skill should now behave less like a code prompt and more like a Roblox production assistant: it designs, builds, tests, measures, optimizes, debugs, and cuts scope when needed.
+BloxSmith is intended as a practical, production-focused Claude Skill for Roblox developers who want better architecture, safer multiplayer code, cleaner systems, stronger optimization, and a more professional development workflow.
