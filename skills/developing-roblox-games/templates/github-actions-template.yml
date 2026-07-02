@@ -1,0 +1,17 @@
+name: Roblox Project Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON files
+        run: |
+          python -m json.tool skills/developing-roblox-games/templates/default.project.json > /dev/null
+          python -m json.tool skills/developing-roblox-games/templates/rojo-project-template.json > /dev/null
+      - name: Show repository tree
+        run: find . -maxdepth 4 -type f | sort

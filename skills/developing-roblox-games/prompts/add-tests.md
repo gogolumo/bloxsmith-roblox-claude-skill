@@ -1,0 +1,1 @@
+Use the developing-roblox-games skill to add automated tests for this Roblox feature. Pick TestEZ or Jest Roblox based on the project, add regression coverage where useful, and include manual Studio tests for behavior that cannot be unit tested.

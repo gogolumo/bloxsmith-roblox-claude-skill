@@ -1,0 +1,13 @@
+{
+  "assets": [
+    {
+      "name": "ExampleCrate",
+      "source": "CreatorStore",
+      "assetId": 0,
+      "usedIn": ["StarterCove"],
+      "licenseStatus": "NeedsReview",
+      "approved": false,
+      "budgetTier": "RepeatedProp"
+    }
+  ]
+}

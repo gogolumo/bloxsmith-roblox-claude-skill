@@ -1,0 +1,1 @@
+Add analytics to this Roblox feature. Identify adoption, completion, drop-off, economy, and performance events. Produce server-side Luau hooks, event names, custom fields, and published-experience verification steps.

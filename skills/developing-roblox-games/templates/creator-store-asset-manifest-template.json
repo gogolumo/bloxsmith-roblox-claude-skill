@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "notes": "Do not place API keys or private tokens in this file. Replace assetId 0 with reviewed Creator Store asset IDs only.",
+  "kits": {
+    "ExampleCoastalVillageKit": {
+      "style": "stylized low-poly coastal village",
+      "status": "draft",
+      "assets": [
+        {
+          "name": "Example Dock Pack",
+          "assetId": 0,
+          "assetType": "Model",
+          "source": "Creator Store",
+          "creator": "Unknown until selected",
+          "usage": "dock blockout and decoration",
+          "reviewStatus": "placeholder",
+          "scriptsAllowed": false,
+          "permissionNotes": "Verify the experience can load/use this asset.",
+          "cleanupNotes": [
+            "Inspect descendants",
+            "Remove or review scripts",
+            "Check collision",
+            "Set pivot",
+            "Rename hierarchy"
+          ]
+        }
+      ]
+    }
+  }
+}

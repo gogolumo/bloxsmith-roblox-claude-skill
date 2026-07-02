@@ -1,0 +1,16 @@
+name: Lint and format
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JSON files
+        run: python -m json.tool skills/developing-roblox-games/templates/default.project.json > /dev/null
+      - name: Reminder
+        run: echo "Install/pin Rojo, Selene, and StyLua here for real project CI."

@@ -1,0 +1,12 @@
+[package]
+name = "your-name/roblox-game"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+# Add dependencies only when the project really needs them.
+
+[server-dependencies]
+
+[dev-dependencies]

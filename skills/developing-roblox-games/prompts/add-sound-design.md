@@ -1,0 +1,1 @@
+Use the developing-roblox-games skill to add a sound design plan and audio system for this feature. Include registry, volume categories, cleanup, music/ambience zones if needed, and accessibility alternatives.
