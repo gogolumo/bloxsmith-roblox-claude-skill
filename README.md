@@ -1,6 +1,6 @@
-# Roblox Game Dev Skill for Claude
+# BloxSmith — Claude Skill for Roblox Game Development
 
-`developing-roblox-games` is a Claude Skill for serious Roblox development work. It helps Claude plan, implement, debug, refactor, and review Roblox games using Luau, Roblox Studio, multiplayer-safe server/client architecture, DataStores, UI/HUD patterns, Rojo-compatible project structure, procedural 3D model generation workflows, Creator Store asset sourcing/import workflows, internet/open-source research, reference-game mechanic analysis, clean-room mechanic adaptation, and security-focused code review, automated testing, localization, release management, experiments, accessibility, animation/audio pipelines, Open Cloud automation, project documentation, and multi-agent production review.
+BloxSmith is a production-ready Claude Skill for serious Roblox game development. It helps Claude Code plan, implement, debug, refactor, optimize, and review Roblox games using Luau, Roblox Studio, Rojo, secure multiplayer architecture, DataStores, UI/HUD systems, procedural 3D workflows, Creator Store asset pipelines, QA, analytics, LiveOps, and release management.
 
 This repository is designed for:
 
